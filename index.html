@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>El Juego del Ahorcado</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+<div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-[550px] text-center">
+    <!-- ------------------------------------------------------------------------------- -->
+    <!-- START SCREEN -->
+    <div id="start-screen" class="">
+        <h1 class="text-3xl font-bold mb-8">Juego del Ahorcado</h1>
+        <form id="start-form" class="space-y-4">
+            <div>
+                <label for="player-name-input" class="text-start block text-lg font-semibold mb-2">Ingrese su nombre:</label>
+                <input id="player-name-input" name="player-name" type="text" class="w-full p-2 border border-gray-400 rounded">
+            </div>
+            <div>
+                <label for="player-surname-input" class="text-start block text-lg font-semibold mb-2">Ingrese su apellido:</label>
+                <input id="player-surname-input" name="player-surname" type="text" class="w-full p-2 border border-gray-400 rounded">
+            </div>
+            <div>
+                <label for="player-file-input" class="text-start block text-lg font-semibold mb-2">Ingrese su legajo:</label>
+                <input id="player-file-input" name="player-file" type="text" class="w-full p-2 border border-gray-400 rounded">
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="mt-4 px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Comenzar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------- -->
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="hidden">
+        <!-- Player Name -->
+        <h2 class="mb-4">Jugador: <span id="player-display" class="font-semibold"></span></h2>
+        <!-- Canvas with the hangman -->
+        <canvas id="hangman" width="200" height="200" class="bg-gray-50 border border-gray-300 rounded mb-4 mx-auto"></canvas>
+        <!-- Word Display -->
+        <div id="word-display" class="word text-2xl tracking-widest mb-4"></div>
+        <!-- Keyboard -->
+        <div id="game-keyboard" class="flex flex-wrap gap-1 justify-center mt-4"></div>
+        <!-- Game Message -->
+        <p id="game-message" class="message font-semibold mt-4"></p>
+        <!-- Return Button -->
+        <button id="return-button" class="mt-6 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">
+            Volver al inicio
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src=scripts/script.js></script>
+</body>
+</html>
